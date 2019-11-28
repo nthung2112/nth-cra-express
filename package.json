@@ -1,0 +1,30 @@
+{
+  "name": "nth-cra-express",
+  "version": "1.0.0",
+  "description": "Template using create-react-app with a Node Express Backend",
+  "author": "nthung2112@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "client": "cd client && npm start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "dev:server": "cd client && npm run build && cd .. && npm start",
+    "start": "node server.js",
+    "preinstall": "cd client && npm install",
+    "prebuild": "cd client && npm install && npm run build",
+    "build": "NODE_ENV=production node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.0",
+    "nodemon": "^2.0.1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "create-react-app"
+  ]
+}
