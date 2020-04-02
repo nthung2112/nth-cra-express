@@ -1,26 +1,30 @@
 {
   "name": "nth-cra-express",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Template using create-react-app with a Node Express Backend",
   "author": "nthung2112@gmail.com",
   "license": "MIT",
+  "main": "server.js",
   "scripts": {
-    "client": "cd client && npm start",
+    "client": "cd client && yarn start",
     "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "dev:server": "cd client && npm run build && cd .. && npm start",
-    "start": "node server.js",
-    "preinstall": "cd client && npm install",
-    "prebuild": "cd client && npm install && npm run build",
-    "build": "NODE_ENV=production node server.js"
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "dev:server": "cd client && yarn build && cd .. && yarn start",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "preinstall": "cd client && yarn",
+    "build": "yarn start"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "concurrently": "^5.0.0",
-    "nodemon": "^2.0.1"
+    "concurrently": "^5.1.0",
+    "cross-env": "^7.0.2",
+    "husky": "^4.2.3",
+    "nodemon": "^2.0.2"
   },
   "keywords": [
     "node",
